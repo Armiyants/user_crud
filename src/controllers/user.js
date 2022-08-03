@@ -4,12 +4,7 @@ import validateEmail from "../utils/validator.js";
 const UserModel = mongoose.model('User');
 
 
-
-class UserController {
-    constructor() {
-    }
-
-    static async findUser(req, res) {
+export const findUser = async function (req, res) {
         try {
             const reqBody = req?.body;
             if (Object.values(reqBody).length < 1) {
@@ -36,7 +31,7 @@ class UserController {
         }
     };
 
-    static async createUser(req, res) {
+export const createUser = async function (req, res) {
         try {
             const reqBody = req?.body;
 
@@ -73,7 +68,7 @@ class UserController {
         }
     };
 
-    static async deleteUser(req, res) {
+export const deleteUser = async function (req, res) {
         try {
             const userId = req.params.id;
 
@@ -87,8 +82,6 @@ class UserController {
             console.error("Error while deleting user: " + err);
             return res.status(500).send('Error while deleting user.');
         }
-    };
-}
+    }
 
 
-export default UserController;
