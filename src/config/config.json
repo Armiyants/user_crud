@@ -1,0 +1,10 @@
+{
+  "listeningPort": 3000,
+  "mongoDB": {
+    "host": "mongodb://localhost",
+    "port": 27017,
+    "database": "mrc-hhpr-db",
+    "configs": "connectTimeoutMS=300000",
+    "isDebug": true
+  }
+}
